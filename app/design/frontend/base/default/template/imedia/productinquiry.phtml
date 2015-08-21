@@ -1,0 +1,131 @@
+<?php 
+$isActive = Mage::getStoreConfig('inquiry/product/is_active') ;
+if($isActive == 1):
+$productId   = Mage::registry('current_product')->getId();								
+$productName = Mage::registry('current_product')->getName();								
+$productSku  = Mage::registry('current_product')->getSku();		
+$collections  = $this->inquiryCollection($productId);	
+if($collections->count() != 0):
+?>
+<div class="inquiry_question_area">
+	<h1>
+	<?php 
+	$headingOne = Mage::getStoreConfig('inquiry/product/first_heading');
+	if($headingOne == ''){
+		echo $this->__('Frequently Asked Questions');
+	}else{
+		echo $headingOne;
+	}
+	?>
+	</h1>
+	<div class="inquiry">
+		<?php foreach($collections as $collection): ?>
+			<h2>
+				<?php echo 'Q. '.$collection->getUserQuestion(); ?>
+			</h2>
+			<p>
+				<?php echo 'A. '.$collection->getAdminAnswer(); ?>
+			</p>
+		<?php endforeach; ?>		
+	</div>
+</div>
+<?php endif; ?>
+<div class="inquiry_area">	
+	<div id="success"></div>
+	<h1>
+	<?php 
+	$headingTwo = Mage::getStoreConfig('inquiry/product/second_heading');
+	if($headingTwo == ''){
+		echo $this->__('Do You Have Any Question ?');
+	}else{
+		echo $headingTwo;
+	}
+	?>
+	</h1>
+	<div class="inquiry">
+		<form method="post" action="<?php echo $this->getUrl('inquiry/form/submit'); ?>" id="inquiryForm">
+			<input type="hidden" value="<?php echo $productId; ?>" name="product_id" />
+			<input type="hidden" value="<?php echo $productName; ?>" name="product_name" />
+			<input type="hidden" value="<?php echo $productSku; ?>" name="product_sku" />
+			<div class="inquiry-content-block">
+				<label><?php echo $this->__('Name'); ?>*</label>
+				<p>
+					<input type="text" name="user_name" id="user_name" class="required-entry validate-text" placeholder="Enter Your Name">
+				</p>
+			</div>
+			<div class="inquiry-content-block">
+				<label><?php echo $this->__('Email'); ?>*</label>
+				<p>
+					<input type="text" name="user_email" id="user_email" class="required-entry validate-email" placeholder="Enter Your Email">
+				</p>
+			</div>
+			<div class="inquiry-content-block">	
+				<label><?php echo $this->__('Question'); ?>*</label>
+				<p>
+					<textarea name="user_question" id="user_question" class="required-entry validate-text" placeholder="Enter Your Question"></textarea>
+				</p>
+			</div>
+			<?php 
+			$val1 = rand(1,9);
+			$val2 = rand(1,9);
+			$combinedVal = "$val1 + $val2";
+			$data = $val1 + $val2;
+			Mage::getSingleton('core/session')->setCaptchaVal($data);
+			?>
+			<div class="inquiry-content-block">	
+				<label><?php echo $this->__('Captcha');?>*</label>
+				<p>
+					<?php echo $combinedVal; ?> = <input name="captcha_answer" class="required-entry validate-digits" type="text" /><?php echo " enter the result ex:(3 + 2 = 5)"; ?>
+				</p>
+			</div>
+			<button type="submit" title="Submit" class="button"><span><span><?php echo $this->__('Submit') ;?></span></span></button>
+			<div id="loading" style="display:none;"><?php echo $this->__('Please Wait....'); ?></div>
+		</form>
+		<p>* <?php echo $this->__('required fields'); ?></p>	
+	</div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+	var formId = 'inquiryForm';
+	var myForm = new VarienForm(formId, true);
+    var postUrl = '<?php echo $this->getUrl("inquiry/form/submit") ?>';
+   
+	function doAjax() {
+        if (myForm.validator.validate()) {
+            Element.show('loading');
+			new Ajax.Updater(
+                { success:'formSuccess' }, postUrl, {
+                    method:'post',
+                    asynchronous:true,
+                    evalScripts:false,
+					reset:true,
+                    onComplete:function(request, json) {
+						var change = request.responseText.split('&&');
+						if(change[1] == 1){
+							$('success').update(change[0]);
+						}else{
+							$('success').update(request.responseText);
+							$(formId).reset();
+						}
+						Element.hide('loading');
+                        Element.show('formSuccess');						
+                    },
+                    onLoading:function(request, json){
+                        Element.show('formLoader');	
+					},
+					onSuccess:function(request, json){
+                       
+					},
+                    parameters: $(formId).serialize(true),
+                }
+            );
+        }
+    }
+    
+    new Event.observe(formId, 'submit', function(e){
+        e.stop();
+        doAjax();
+    });
+//]]>
+</script>
+<?php endif;?>

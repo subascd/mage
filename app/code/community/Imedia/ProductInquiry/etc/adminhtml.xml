@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <imedia_productinquiry_inquiry translate="title" module="imedia_productinquiry">
+			<title>Product Inquiry</title>
+			<sort_order>999</sort_order>
+			<children>
+				<adminhtml_inquiry translate="title">
+					<title>Product Inquiry</title>
+					<sort_order>1</sort_order>
+					<action>adminhtml/inquiry</action>
+				</adminhtml_inquiry>                       
+			</children>
+		</imedia_productinquiry_inquiry>
+	</menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+					<imedia_productinquiry_inquiry translate="title" module="imedia_productinquiry">
+						<title>Product Inquiry</title>
+						<sort_order>999</sort_order>
+						<children>
+							<adminhtml_inquiry translate="title">
+								<title>Product Inquiry</title>
+								<sort_order>1</sort_order>
+							</adminhtml_inquiry>                       
+						</children>
+					</imedia_productinquiry_inquiry>
+				</children>
+            </admin>
+        </resources>
+    </acl> 
+	<acl>
+		<resources>
+		<all>
+			<title>Allow Everything</title>
+		</all>
+		<admin>
+			<children>
+			   <system>
+				  <children>
+					 <config>
+						<children>
+						   <inquiry translate="title">
+							  <title>Product Inquiry</title>							 
+						   </inquiry>
+						</children>
+					 </config>
+				  </children>
+			   </system>
+			</children>
+		</admin>
+		</resources>
+	</acl>	
+</config>

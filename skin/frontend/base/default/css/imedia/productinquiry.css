@@ -1,0 +1,30 @@
+.inquiry_question_area{
+		margin:10px 0px;
+		border:1px solid #ccc;
+		border-radius:5px;
+		padding:15px;		
+}
+.inquiry_area{
+		margin:10px 0px;
+		border:1px solid #ccc;
+		border-radius:5px;
+		padding:15px;
+	}
+.inquiry_area .inquiry-content-block{
+	margin:10px 0px;width:100%;
+}
+.inquiry_area .inquiry-content-block label{
+	font-size:14px;
+}
+.inquiry_area input[type="text"]{
+	width: 200px;
+	height: 20px;
+	padding:0px 3px;
+}
+.inquiry_area textarea{
+	width:290px;
+	height:90px;
+	padding:0px 3px;
+}
+.inquiry h2,.inquiry p{font-size:14px;}
+.inquiry{margin-top:20px;}

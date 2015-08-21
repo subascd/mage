@@ -1,0 +1,9 @@
+<?xml version="1.0"?> 
+<config>     
+	<modules>
+		<Imedia_ProductInquiry>
+			<active>true</active>             
+			<codePool>community</codePool>        
+		</Imedia_ProductInquiry>    
+	</modules> 
+</config>

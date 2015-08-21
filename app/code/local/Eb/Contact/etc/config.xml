@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Eb_Contact>
+      <version>0.0.1</version>
+    </Eb_Contact>
+  </modules>
+  <global>
+    <helpers>
+      <contact>
+        <class>Eb_Contact_Helper</class>
+      </contact>
+    </helpers>
+    <blocks>
+      <contact>
+        <class>Eb_Contact_Block</class>
+      </contact>
+    </blocks>
+    <models>
+      <contact>
+        <class>Eb_Contact_Model</class>
+      </contact>
+    </models>
+  </global>
+</config>

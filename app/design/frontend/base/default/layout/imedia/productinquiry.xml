@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.0.1">
+	<catalog_product_view>
+		<reference name="head">
+			<action method="addCss" ifconfig="inquiry/product/is_active" ><stylesheet>css/imedia/productinquiry.css</stylesheet></action>
+		</reference>
+		<reference name="content">
+			<block type='imedia_productinquiry/inquiry' after="product.info" template="imedia/productinquiry.phtml"/>
+		</reference>
+	</catalog_product_view>
+</layout>

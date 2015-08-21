@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<widgets>
+  <contact_forms type="contact/forms" translate="form description" module="contact">
+    <name>Display Form</name>
+    <description>Allow to add form in CMS page</description>
+    <parameters>
+      <link_options>
+        <label>Form Options</label>
+        <visible>1</visible>
+        <required>1</required>
+        <type>multiselect</type>
+        <source_model>contact/options</source_model>
+      </link_options>
+    </parameters>
+  </contact_forms>
+</widgets>

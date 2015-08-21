@@ -1,0 +1,8 @@
+a:4:{i:0;s:61:"Module "Infortis_Brands" requires module "Infortis_Infortis".";i:1;s:730:"#0 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\Config.php(849): Mage::throwException('Module "Inforti...')
+#1 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\Config.php(812): Mage_Core_Model_Config->_sortModuleDepends(Array)
+#2 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\Config.php(315): Mage_Core_Model_Config->_loadDeclaredModules()
+#3 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\App.php(414): Mage_Core_Model_Config->loadModules()
+#4 D:\xampp\htdocs\magento\app\code\core\Mage\Core\Model\App.php(343): Mage_Core_Model_App->_initModules()
+#5 D:\xampp\htdocs\magento\app\Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 D:\xampp\htdocs\magento\index.php(87): Mage::run('', 'store')
+#7 {main}";s:3:"url";s:82:"/magento/index.php/admin/system_config/index/key/4e837af3f3d5c79b1e2aa57448abef53/";s:11:"script_name";s:18:"/magento/index.php";}

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+    <name>Imedia_ProductInquiry</name>
+    <version>0.0.2</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>This Product Inquiry Module allows customers to make inquiry about a product directly from the product page.</summary>
+    <description>This Product Inquiry Module allows customers to make inquiry about a product directly from the product page.&#xD;
+&#xD;
+Features of Imedia Product Inquiry Module&#xD;
+&#xD;
+1. Add an Inquiry Form: Allows customers to ask question about a product directly from the product page.&#xD;
+2. Configuration Setting: Enable/Disable option in System &amp;gt; Configuration &amp;gt; Product Inquiry.&#xD;
+3. Customizable Heading: Admin can change the inquiry form heading and FAQ heading.</description>
+    <notes>Second Stable Release</notes>
+    <authors><author><name>iMediaDesigns</name><user>iMediaDesigns</user><email>info@iMediaDesigns.org</email></author></authors>
+    <date>2015-07-28</date>
+    <time>09:29:08</time>
+    <contents><target name="magecommunity"><dir name="Imedia"><dir name="ProductInquiry"><dir name="Block"><dir name="Adminhtml"><dir name="Inquiry"><dir name="Edit"><file name="Form.php" hash="3f9ca4f8926c78f4ffb68ba536c6244e"/><file name="Tab.php" hash="2dbd39304457b90b5f54bef5ade04e25"/></dir><file name="Edit.php" hash="7e3e0cfcb5f782fb3a5c40b9224706de"/><file name="Grid.php" hash="9fdead225ff2ade30ff3420dd08bcfd8"/></dir><file name="Inquiry.php" hash="6170a6a12ca75db2228a2e907f710aea"/></dir><file name="Inquiry.php" hash="1859fc656d768b01fa24558e7a96c305"/></dir><dir name="Helper"><file name="Data.php" hash="809fbf5d640ed14fc1d4455bf0bc6e31"/></dir><dir name="Model"><file name="Inquiry.php" hash="cb38007f71a555d12ab1da2cf3e793d8"/><dir name="Mysql4"><dir name="Inquiry"><file name="Collection.php" hash="bdddfd1fff04705db7d2164315aba7e1"/></dir><file name="Inquiry.php" hash="9833feace959df2413020768c44ff343"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="InquiryController.php" hash="b330d0c6f4208265d983105bbffa13e2"/></dir><file name="FormController.php" hash="ff7208e870804d9074c4fcdd6b7c756f"/></dir><dir name="etc"><file name="adminhtml.xml" hash="8b2cd5cce639979142ec01a684876d9a"/><file name="config.xml" hash="ced089016b6cf7e7265f6d38913c6d28"/><file name="system.xml" hash="58e68436d007809b424bc787e7e1eca5"/></dir><dir name="sql"><dir name="imedia_productinquiry_setup"><file name="mysql4-install-0.0.1.php" hash="f516c7b1ce402e274b449b2ac8db7448"/><file name="mysql4-upgrade-0.0.1-0.0.2.php" hash="e52ecca1d8235e7538cabc2680fc9646"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Imedia_ProductInquiry.xml" hash="851f43daffdc755a66b11dce78314603"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><dir name="imedia"><file name="productinquiry.xml" hash="3b18f17d941e05a9f166f5b14b4dd3cf"/></dir></dir><dir name="template"><dir name="imedia"><file name="productinquiry.phtml" hash="2f4662a38aee9009037a79c924666484"/></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="imedia"><file name="productinquiry.xml" hash="630d27b9f1331757b58f96d4f5004adc"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="css"><dir name="imedia"><file name="productinquiry.css" hash="4e0b2f848cfe9044dc256b4cad1d6f15"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="en_US"><dir name="template"><dir name="email"><dir name="imedia"><file name="admin_notification.html" hash="93b107215765040a5070d3f9990a833e"/><file name="user_inquiry.html" hash="57ad711ef50919d57cf35556eb86b502"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
